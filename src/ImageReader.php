@@ -20,11 +20,17 @@ class ImageReader
         $this->readConfiguration();
     }
 
+    /**
+     * Configuration reader
+     */
     private function readConfiguration()
     {
         $this->config = yaml_parse_file($this->configPath);
     }
 
+    /**
+     * @return array
+     */
     public function getConfiguration()
     {
         return $this->config;
@@ -59,12 +65,19 @@ class ImageReader
         return $this->config['users-logo']['location']['path'].'/'.$filename;
     }
 
-
+    /**
+     * @param string $filename
+     * @return string
+     */
     public function getNonProfitLargeLogo(string $filename):string
     {
         return $this->config['non-profit-logo']['large']['location']['path'].'/'.$filename;
     }
 
+    /**
+     * @param string $filename
+     * @return string
+     */
     public function getNonProfitSmallLogo(string $filename):string
     {
         return $this->config['non-profit-logo']['small']['location']['path'].'/'.$filename;

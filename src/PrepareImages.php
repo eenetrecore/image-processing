@@ -5,6 +5,10 @@ namespace Raffleometer\Image;
 
 use Symfony\Component\Config\Definition\Exception\Exception;
 
+/**
+ * Class PrepareImages
+ * @package Raffleometer\Image
+ */
 class PrepareImages
 {
     private $config;
