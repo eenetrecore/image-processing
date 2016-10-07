@@ -1,0 +1,43 @@
+<!--
+  This file is part of The Opsbears Framework. Please read README.md and LICENSE.md for details.
+  @copyright 2014-2016 Opsbears & Open Source Contributors
+  @license   https://opensource.org/licenses/MIT MIT license
+  @see       https://framework.opsbears.com
+  -->
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/5.1/phpunit.xsd"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="false"
+        beStrictAboutTestsThatDoNotTestAnything="false"
+        beStrictAboutOutputDuringTests="true"
+        beStrictAboutChangesToGlobalState="true"
+        stopOnError="true"
+        stopOnWarning="true"
+        bootstrap="vendor/autoload.php"
+>
+    <testsuites>
+        <testsuite name="all">
+            <directory suffix=".php">tests</directory>
+        </testsuite>
+        <!-- Tests that maintain compatibility -->
+        <testsuite name="deprecated">
+            <directory suffix="DeprecatedTest.php">tests</directory>
+        </testsuite>
+        <!-- New tests only, no deprecated stuff -->
+        <testsuite name="nondeprecated">
+            <directory suffix=".php">tests</directory>
+            <exclude>*DeprecatedTest.php</exclude>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="docs/coverage" />
+        <log type="coverage-clover" target="docs/coverage/clover.xml" />
+    </logging>
+</phpunit>

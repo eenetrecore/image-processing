@@ -1,0 +1,33 @@
+non-profit-logo:
+  small:
+    size:
+      height: 200
+      width: 200
+    location:
+      path: tests/test-data/image-test/non-profit/logo/small
+  large:
+    size:
+      height: 239
+      width: 424
+    location:
+      path: tests/test-data/image-test/non-profit/logo/large
+users-logo:
+  size:
+    height: 200
+    width: 200
+  location:
+    path: tests/test-data/image-test/users/logo
+event:
+  cover:
+    blur-size: 8
+    size:
+      height: 572
+      width: 1440
+    location:
+      path: tests/test-data/image-test/event/cover
+  small:
+    size:
+      height: 158
+      width: 278
+    location:
+      path: tests/test-data/image-test/event/small
