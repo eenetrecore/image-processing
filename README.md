@@ -1,6 +1,6 @@
-# User Mage
+# Image Processing
 
-User authentication, management and authorization with PHP
+Raffleometer image handling
 
 ##Requirements
 - php7
